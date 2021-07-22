@@ -1,0 +1,13 @@
+name: My first github action
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test_project:
+    name: Deploy to netlify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Check changes to the branch
+        uses: netlify/actions/diff-includes@master
